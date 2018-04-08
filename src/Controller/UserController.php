@@ -1,10 +1,17 @@
 <?php
 namespace Controller;
+use Core\Controller;
 
-class UserController
+class UserController extends Controller
 {
 	public function add(){
-	echo "tralala!".PHP_EOL;
+	$this->render('register');
+	}
+
+	public function show () {
+		//var_dump($this->render);
+		$this->render('register');
+		//echo ' show show view show';
 	}
 }
 ?>

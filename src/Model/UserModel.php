@@ -1,20 +1,18 @@
 <?php
-	Class Model
+namespace Model
+
+	Class UserModel extends BrouillonModel
 	{
-		const HOST ='localhost';
-		const DBNAME = 'piephp';
-		const NAME = 'root';
-		const PSW ='';
+		private $_email;
+		private $_password;
 
-		private static $_instance = NULL;
+		public function save($_email, $_password){
 
-		public static function bdd_connection(){
-			if (!isset(self::$_instance)){
-				$option = array (PDO :: ATTR_PERSISTENT => true;
-					PDO :: ATTR_ERRMODE => ERRMODE_EXCEPTION);
-				self::$_instance = new PDO ('mysql_host='.SELF::HOST.'dbname='.SELF::DBNAME,SELF::NAME,SELF::PSW,$option);
-			}
-		return self::$_instance;
-		} 
+			$bdd = BrouillonModel::bdd_connection();
+			$request = $bdd->prepare("INSERT INTO users (email,password) VALUES (?,?)");
+			$result = $request->execute([$_email,$_password]);
+			return $result;
+
+		}
 	}
 ?>

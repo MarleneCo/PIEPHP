@@ -1,17 +1,20 @@
 <?php
-spl_autoload_register(function($file){
+function autoload ($file)
+{
 	//echo $file;
-
-	if (file_exists($file.".php")){
-		include($file.".php");
+	$f = $file . '.php'; 
+	if (file_exists($f)){
+		include($f);
 	}else{
-		if(file_exists("src".DIRECTORY_SEPARATOR.$file.".php")){
-			include ("src".DIRECTORY_SEPARATOR.$file.".php");
+		$f = 'src' . DIRECTORY_SEPARATOR . $f;
+		if(file_exists($f)){
+			include ($f);
 		}else{
 			echo "file not exiting".PHP_EOL;
 			return;
 		}
 	}
-});
+}
+spl_autoload_register('autoload');
 
 ?>

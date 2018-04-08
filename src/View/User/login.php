@@ -5,6 +5,7 @@
 		<meta charset="utf-8">
 	</head>
 	<body>
+		<h2>/src/View/User/login</h2>
 		<h1>Form</h1>
 		<form method="POST" action="../../../index.php">
 			<label>Email</label>
