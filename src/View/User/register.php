@@ -5,7 +5,7 @@
 	<title>Pie PHP</title>
 </head>
 <body>
-	<form method="post" action="">
+	<form method="post" action="user/registerAction">
 		<input type="email" name="email">
 		<input type="password" name="pwd">
 		<button type="submit">submit</button>

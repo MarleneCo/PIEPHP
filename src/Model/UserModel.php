@@ -1,17 +1,18 @@
 <?php
 namespace Model
-
-	Class UserModel extends BrouillonModel
+use Database;
+	Class UserModel
 	{
-		private $_email;
-		private $_password;
 
-		public function save($_email, $_password){
+		//private $_email;
+		//private $_password;
 
-			$bdd = BrouillonModel::bdd_connection();
+		public function save(){
+			echo "je rentre dans la fonction";
+			/*$bdd = Database::bdd_connection();
 			$request = $bdd->prepare("INSERT INTO users (email,password) VALUES (?,?)");
 			$result = $request->execute([$_email,$_password]);
-			return $result;
+			return $result;*/
 
 		}
 	}
